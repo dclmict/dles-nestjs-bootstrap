@@ -1,0 +1,15 @@
+syntax = "proto3";
+package data_gateway;
+
+service DataGatewayService {
+  rpc GetApiHealth (GetApiHealthPayload) returns (GetApiHealthResponse) {};
+}
+
+message GetApiHealthPayload {};
+
+message GetApiHealthResponse {
+  string service = 1;
+  string version = 2;
+  string timestamp = 3;
+  string uptime = 4;
+};
